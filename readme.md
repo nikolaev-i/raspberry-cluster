@@ -18,7 +18,7 @@ My cluster is **really ghetto** at the moment, but with time I'll 3D print some 
 ![cluster_setup](img/wide-shot.jpg)
 
 
-I'm going with Ubuntu server and sadly I see this error: ![warning](img/warning.png)
+I'm going with Ubuntu server and sadly I see this warning: ![warning](img/warning.png)
 Which means that the Pi 2B will not be part of the cluster, since It can't support 64-bit systems. I'll have to find another use for it probably monitoring or something. (This part still stands true, sadly).
 
 
