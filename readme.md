@@ -16,5 +16,8 @@ I'll be following this guide to get started [How to build a Raspberry Pi Kuberne
 
 
 I'm going with Ubuntu server and sadly I see this error: ![warning](img/warning.png)
-Which means that the Pi 2B will not be part of the cluster, since It can't support 64-bit systems.
+Which means that the Pi 2B will not be part of the cluster, since It can't support 64-bit systems. I'll have to find another use for it probably monitoring or something.
+
+
+
 
