@@ -34,3 +34,28 @@ Super happy with the results, so far.
 
 ![pi_shot](img/bokeh-shot.jpg)
 
+---
+# Experimenting 
+
+- I've actually added the pi2b+ to the cluster, hopefully it would be able to keep up and it's probably a bad idea, but I'm learning so I don't care that much.
+
+
+ 
+- Another thing managing - 3 raspberrys is a pain, so I've started using  Ansible. It's super great for basic tasks like rebooting or checking something on the whole cluster and I'm *barely* scratching the surfrace. I've never used it, but I can see myself using it for things like this. I've wrote a very basic inventory file 
+
+```
+[master]
+192.168.1.10
+
+[workers]
+192.168.1.[11:12]
+
+[kluster:children]
+master
+workers
+
+[kluster:vars]
+ansible_user
+ansible_password
+```
+Most important thing is to see how to manage passwords and users.
