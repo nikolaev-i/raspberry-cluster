@@ -59,3 +59,41 @@ ansible_user
 ansible_password
 ```
 Most important thing is to see how to manage passwords and users.
+
+---
+
+Kubernets is a bit overwhelimg, I got Helm and I'm dealing with charts, IT can be weird sometimes.
+I'm adding Grafana and Prometheus to monitor the cluster. 
+
+It seems that raspberryOS doesn't have git by default installed, so I wrote a playbook to install it on the whole cluster(which took more time than doing it manually, but hey). Which was pretty cool runing a command and everything just happens and you get the results. I'm starting to love Ansible.
+
+```
+TASK [Gathering Facts] *********************************************************************************************************************************************************************ok: [192.168.1.12]
+ok: [192.168.1.10]
+ok: [192.168.1.11]
+
+TASK [Install git] *************************************************************************************************************************************************************************changed: [192.168.1.12]
+changed: [192.168.1.11]
+changed: [192.168.1.10]
+
+PLAY RECAP *********************************************************************************************************************************************************************************192.168.1.10               : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+192.168.1.11               : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+192.168.1.12               : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+```
+Everything turned out pretty well, playbook is probably bad practices, but it gets the job done and now I have some practical experience.
+
+One of the issues I was afraid that might show up did showed up and that is temperature:
+
+```
+192.168.1.12 | CHANGED | rc=0 >>
+temp=68.8'C
+192.168.1.11 | CHANGED | rc=0 >>
+temp=47.6'C
+192.168.1.10 | CHANGED | rc=0 >>
+temp=86.0'C
+```
+This is super bad for a raspberry not only does it throttle down and makes things slower than they are, but prolonged overheating can cause damage to components and these raspberries are old.
+One thing that helped a bit was spreading out the cluster, but it's a temporary solution. I'll get some fans first thing and design a cluster case for everything.
+
+
+

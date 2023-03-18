@@ -1,0 +1,12 @@
+---
+
+- hosts: kluster
+  become: true
+  become_user: root
+  tasks:
+    - name: Install git
+      apt:
+       name: git
+       state: present
+       update_cache: yes
+
